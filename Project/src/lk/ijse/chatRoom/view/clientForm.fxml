@@ -4,22 +4,37 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="797.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatRoom.Controller.ClientFormController">
    <children>
+      <ImageView fitHeight="797.0" fitWidth="569.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../Assets/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg" />
+         </image>
+      </ImageView>
       <Label fx:id="clientName" layoutX="14.0" layoutY="8.0" text="Client">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <TextArea fx:id="textArea" layoutX="20.0" layoutY="48.0" prefHeight="610.0" prefWidth="532.0" />
-      <TextField fx:id="textFieldSent" layoutX="20.0" layoutY="698.0" prefHeight="38.0" prefWidth="396.0" />
-      <Button layoutX="431.0" layoutY="698.0" mnemonicParsing="false" onAction="#sentBtnOnAction" prefHeight="31.0" prefWidth="119.0" text="Sent">
+      <TextArea fx:id="textArea" layoutX="16.0" layoutY="54.0" prefHeight="661.0" prefWidth="536.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></TextArea>
+      <TextField fx:id="textFieldSent" layoutX="20.0" layoutY="738.0" prefHeight="38.0" prefWidth="396.0" />
+      <Button layoutX="425.0" layoutY="740.0" mnemonicParsing="false" onAction="#sentBtnOnAction" prefHeight="38.0" prefWidth="125.0" text="Sent">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
+      <ImageView fitHeight="661.0" fitWidth="536.0" layoutX="14.0" layoutY="54.0" opacity="0.51" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../Assets/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
