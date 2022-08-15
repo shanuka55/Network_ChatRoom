@@ -58,7 +58,7 @@ public class ClientFormController implements Initializable {
 
                 while (socket.isConnected()){
                     sms = dataInputStream.readUTF();
-                    textArea.appendText("\n");
+                    textArea.appendText(sms+ "\n");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

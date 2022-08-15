@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lk.ijse.chatRoom.Util.ClientMaintainer;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -56,6 +57,10 @@ public class LoginFormController implements Initializable {
 
                 dataInputStream = new DataInputStream(socket.getInputStream());
                 dataOutputStream = new DataOutputStream(socket.getOutputStream());
+
+                ClientMaintainer clientMaintainer = new ClientMaintainer(socket);
+                Thread thread = new Thread(clientMaintainer);
+                thread.start();
 
                 while (!socket.isConnected()){
                     sms = dataInputStream.readUTF();

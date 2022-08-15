@@ -27,6 +27,7 @@ public class ClientMaintainer implements Runnable {
             this.clientName = LoginFormController.clientName;
             System.out.println("client Maintanet Started....!");
             clientMaintainerArrayList.add(this);
+            defaultMsg(" is Connected to the Chat.....!");
         } catch (IOException e) {
             e.printStackTrace();
         }
