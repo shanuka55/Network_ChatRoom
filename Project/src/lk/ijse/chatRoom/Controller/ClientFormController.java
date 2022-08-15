@@ -1,22 +1,29 @@
 package lk.ijse.chatRoom.Controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.URL;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class ClientFormController implements Initializable {
     public Label clientName;
     public TextArea textArea;
     public TextField textFieldSent;
+    public Label lbltime;
 
     String Name;
 
@@ -42,9 +49,24 @@ public class ClientFormController implements Initializable {
         textFieldSent.clear();
 
     }
+     public void showTime(){
+        Timeline clock = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e->{
+            LocalTime currentTime = LocalTime.now();
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+            String time = currentTime.format(dateTimeFormatter);
+            lbltime.setText(time);
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        showTime();
+
+
         Name = LoginFormController.clientName;
         clientName.setText(Name);
         System.out.println(Name);
