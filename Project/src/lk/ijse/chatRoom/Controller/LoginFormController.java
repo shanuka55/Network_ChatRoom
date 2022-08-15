@@ -1,12 +1,17 @@
 package lk.ijse.chatRoom.Controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import lk.ijse.chatRoom.Util.ClientMaintainer;
 
 import java.io.DataInputStream;
@@ -15,6 +20,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class LoginFormController implements Initializable {
@@ -22,6 +29,7 @@ public class LoginFormController implements Initializable {
     public TextField nameTextfield;
 
     public static String clientName;
+    public Label lbltime;
 
     ServerSocket serverSocket;
     Socket socket;
@@ -75,9 +83,23 @@ public class LoginFormController implements Initializable {
         }).start();
 
     }
+    public void showTime(){
+        Timeline clock = new Timeline(new KeyFrame(javafx.util.Duration.ZERO, e->{
+            LocalTime currentTime = LocalTime.now();
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+            String time = currentTime.format(dateTimeFormatter);
+            lbltime.setText(time);
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        showTime();
 
         new Thread(() -> {
             try {
