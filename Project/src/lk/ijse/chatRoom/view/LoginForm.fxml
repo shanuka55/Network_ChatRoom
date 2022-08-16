@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="498.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatRoom.Controller.LoginFormController">
+<AnchorPane prefHeight="566.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatRoom.Controller.LoginFormController">
    <children>
-      <ImageView fitHeight="498.0" fitWidth="832.0" layoutX="-3.0" layoutY="-1.0" opacity="0.72" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="566.0" fitWidth="919.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../Assets/john-towner-JgOeRuGD_Y4-unsplash%20-%20Copy.jpg" />
+            <Image url="@../Assets/kampung_chat-1024x635.png" />
          </image>
       </ImageView>
-      <Label layoutX="97.0" layoutY="232.0" text="Enter Client Name  :">
+      <Label layoutX="79.0" layoutY="239.0" prefHeight="47.0" prefWidth="349.0" style="-fx-background-color: #000000;" text="  Enter Client Name  :" textFill="WHITE">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -26,13 +26,18 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
-      <Label layoutX="211.0" layoutY="70.0" text="ChaT RooM" textFill="#c6c6c6">
+      <Label layoutX="406.0" layoutY="33.0" text="ChaT RooM" textFill="WHITE">
          <font>
-            <Font name="Bradley Hand ITC" size="82.0" />
+            <Font name="Bradley Hand ITC" size="96.0" />
          </font></Label>
-      <Label fx:id="lbltime" layoutX="40.0" layoutY="452.0" prefHeight="28.0" prefWidth="120.0" text="time" textFill="#c3fc17">
+      <Label fx:id="lbltime" layoutX="184.0" layoutY="498.0" prefHeight="28.0" prefWidth="120.0" text="time" textFill="#c3fc17">
          <font>
             <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="502.0" text="Time   :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
          </font>
       </Label>
    </children>

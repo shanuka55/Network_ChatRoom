@@ -12,12 +12,7 @@
 
 <AnchorPane prefHeight="898.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatRoom.Controller.ClientFormController">
    <children>
-      <ImageView fitHeight="906.0" fitWidth="569.0" layoutY="-7.0" opacity="0.68" pickOnBounds="true" smooth="false">
-         <image>
-            <Image url="@../Assets/john-towner-JgOeRuGD_Y4-unsplash%20-%20Copy.jpg" />
-         </image>
-      </ImageView>
-      <Label fx:id="clientName" layoutX="35.0" layoutY="14.0" prefHeight="36.0" prefWidth="197.0" text="Client" underline="true">
+      <Label fx:id="clientName" layoutX="35.0" layoutY="14.0" prefHeight="36.0" prefWidth="197.0" text="Client" textFill="#1a8e9e" underline="true">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -26,18 +21,20 @@
          <font>
             <Font name="System Bold" size="20.0" />
          </font></TextArea>
-      <TextField fx:id="textFieldSent" layoutX="47.0" layoutY="846.0" prefHeight="38.0" prefWidth="336.0" />
-      <Button layoutX="425.0" layoutY="846.0" mnemonicParsing="false" onAction="#sentBtnOnAction" prefHeight="38.0" prefWidth="125.0" text="Send">
+      <TextField fx:id="textFieldSent" layoutX="47.0" layoutY="846.0" prefHeight="38.0" prefWidth="336.0">
+         <font>
+            <Font size="12.0" />
+         </font></TextField>
+      <Button layoutX="425.0" layoutY="846.0" mnemonicParsing="false" onAction="#sentBtnOnAction" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #1e9fc2;" text="Send">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Button>
-      <ImageView fitHeight="788.0" fitWidth="544.0" layoutX="12.0" layoutY="51.0" opacity="0.51" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="770.0" fitWidth="530.0" layoutX="19.0" layoutY="59.0" opacity="0.32" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../Assets/nubelson-fernandes--Xqckh_XVU4-unsplash.jpg" />
+            <Image url="@../Assets/Chatrooms.png" />
          </image>
       </ImageView>
-      <FontAwesomeIconView fill="#f2ecff" glyphName="CAMERA" layoutX="386.0" layoutY="876.0" opacity="0.71" size="25" wrappingWidth="28.0" />
       <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="16.0" layoutY="852.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/images.png" />
@@ -48,5 +45,6 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <FontAwesomeIconView glyphName="CAMERA" layoutX="389.0" layoutY="877.0" size="25" />
    </children>
 </AnchorPane>
