@@ -58,13 +58,14 @@ public class LoginFormController implements Initializable {
         stage.setResizable(false);
         stage.show();
 
+        //start new therd-->
         new Thread(() -> {
             try {
                 socket = serverSocket.accept();
                 System.out.println("Client connected....!");
 
-                dataInputStream = new DataInputStream(socket.getInputStream());
-                dataOutputStream = new DataOutputStream(socket.getOutputStream());
+                dataInputStream = new DataInputStream(socket.getInputStream());  //data get
+                dataOutputStream = new DataOutputStream(socket.getOutputStream()); //data send
 
                 ClientMaintainer clientMaintainer = new ClientMaintainer(socket);
                 Thread thread = new Thread(clientMaintainer);
